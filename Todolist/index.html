@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Todo List</h2>
+        <input id="item">
+        <button id="add">Add</button>
+        
+
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let item=document.getElementById("item")
+    let buttn=document.getElementById("add")
+    let wrapper=document.getElementById("wrapper")
+    let todos=[]//array
+    window.onload=()=>{//arrow function
+        todos= JSON.parse(localStorage.getItem('todos')) || []
+       todos.forEach(todo=>{
+        addtotdos(todo)
+
+       })
+
+    }
+
+
+//add eventlistener
+    buttn.addEventListener('click',()=>{//function
+        //add  item in array
+        todos.push(item.value);//push into 
+        localStorage.setItem('todos',JSON.stringify(todos))
+        addtotdos(item.value)
+        item.value='';
+
+
+    })
+    function addtotdos(todo){
+        //create tag p
+        let par=document.createElement("p");
+        par.id="par"
+        par.textContent=todo;
+        wrapper.appendChild(par)
+        //strike out
+        par.addEventListener('click',function(){
+            par.style.textDecoration='line-through'
+            remove(todo)
+
+        })
+        par.addEventListener('dblclick',function(){
+
+            wrapper.removeChild(par)
+            remove(todo)
+
+        })
+
+        function remove(todo){//par
+            let index=todos.indexOf(todo)
+            if(index>-1){
+                todos.splice(index,1);//splice used to remove elemnt in array
+            }
+            localStorage.setItem('todos',JSON.stringify(todos))
+            
+            
+           
+
+        }
+
+    }
+
+</script>
