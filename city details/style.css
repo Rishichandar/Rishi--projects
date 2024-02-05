@@ -1,0 +1,57 @@
+body
+{
+   background-color: rgba(55, 56, 65, 0.24);
+   
+    
+    
+  
+}
+#box{
+    background:linear-gradient(75deg,rgb(185, 179, 179),rgb(226, 127, 127));
+    width: 15%;
+    height: 80%;
+    padding: 60px;
+    padding-bottom: 120px;
+    margin-top: 130px;
+    border-radius: 4px;
+    margin-left: 38%;
+}
+#box h2{
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+    color: aliceblue;
+}
+#dropdown{
+    text-align: center;
+    position: relative;
+    left: 50px;
+    bottom:30px;
+    border: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 200;
+
+}
+#box button{
+    text-align: center;
+    position: relative;
+    left: 60px;
+    bottom:10px;
+    background-color: rgba(252, 253, 253, 0.911);
+    border: none;
+    padding: 6px;
+    color: black;
+    
+
+}
+#res{
+    
+    position: absolute;
+    left: 555px;
+    width: 270px;
+   
+    bottom: 260px;
+    color: rgb(227, 233, 233);
+}
